@@ -17,9 +17,6 @@
                     "risk.manager@tester.sap.com": {
                         "password": "initial",
                         "ID": "risk.manager@tester.sap.com",
-                        "userAttributes": {
-                            "email": "risk.manager@tester.sap.com"
-                        },
                         "roles": [
                             "RiskManager"
                         ]

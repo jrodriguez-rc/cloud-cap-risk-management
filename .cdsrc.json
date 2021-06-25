@@ -7,9 +7,6 @@
                     "risk.viewer@tester.sap.com": {
                         "password": "initial",
                         "ID": "risk.viewer@tester.sap.com",
-                        "userAttributes": {
-                            "email": "risk.viewer@tester.sap.com"
-                        },
                         "roles": [
                             "RiskViewer"
                         ]

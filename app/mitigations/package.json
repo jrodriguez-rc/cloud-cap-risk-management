@@ -7,7 +7,7 @@
         "build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateManifestBundle generateCachebusterInfo"
     },
     "devDependencies": {
-        "@ui5/cli": "^1.13.1",
+        "@ui5/cli": "^2.11.1",
         "ui5-middleware-simpleproxy": "^0.1.4",
         "@sap/ui5-builder-webide-extension": "1.0.x",
         "ui5-task-zipper": "^0.3.1",

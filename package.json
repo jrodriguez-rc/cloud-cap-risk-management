@@ -24,10 +24,12 @@
     "node": ">=14"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "watch-mitigations": "cds watch --open mitigations/webapp/index.html#fe-lrop-v4"
   },
   "sapux": [
     "app/risks",
+    "app/mitigations",
     "app/suppliers"
   ],
   "eslintConfig": {

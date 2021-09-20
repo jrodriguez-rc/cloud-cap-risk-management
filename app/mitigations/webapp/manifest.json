@@ -1,8 +1,8 @@
 {
-	"_version": "1.12.0",
+	"_version": "1.32.0",
 
 	"sap.app": {
-			"id": "ns.mitigations",
+		"id": "ns.mitigations",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -27,6 +27,7 @@
 
 	"sap.fiori": {
 		"registrationIds": [
+			"626281b5-108c-46fc-995d-cafa210bd3fd"
 		],
 		"archeType": "transactional"
 	},
@@ -57,7 +58,7 @@
 		},
 
 		"dependencies": {
-			"minUI5Version": "1.66.0",
+			"minUI5Version": "1.94.0",
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {},
@@ -82,7 +83,7 @@
 				"preload": true,
 				"settings": {
 					"operationMode": "Server",
-					"groupId": "$auto",
+					"groupId": "$direct",
 					"synchronizationMode": "None",
 					"autoExpandSelect":true
 				}

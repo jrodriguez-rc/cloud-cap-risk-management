@@ -12,7 +12,7 @@
         "deploy": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf"
     },
 	"devDependencies": {
-        "@ui5/cli": "2.7.1",
+        "@ui5/cli": "2.11.1",
         "@ui5/fs": "2.0.1",
         "@ui5/logger": "2.0.0",
         "@sap/ux-ui5-tooling": "1",

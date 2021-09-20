@@ -16,10 +16,12 @@
     "sqlite3": "^5.0.2"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "watch-mitigations": "cds watch --open mitigations/webapp/index.html#fe-lrop-v4"
   },
   "sapux": [
-    "app/risks"
+    "app/risks",
+    "app/mitigations"
   ],
   "eslintConfig": {
     "extends": "eslint:recommended",

@@ -43,15 +43,15 @@
 				</headerToolbar>
 
 				<columns>
-        <Column id="DescriptionColumn">
-            <Text text="Description" id="DescriptionColumnTitle"/>
-        </Column>
-        <Column id="OwnerColumn">
-            <Text text="Owner" id="OwnerColumnTitle"/>
-        </Column>
-        <Column id="TimelineColumn">
-            <Text text="Timeline" id="TimelineColumnTitle"/>
-        </Column>
+					<Column id="DescriptionColumn">
+            			<Text text="Description" id="DescriptionColumnTitle"/>
+        			</Column>
+        			<Column id="OwnerColumn">
+            			<Text text="Owner" id="OwnerColumnTitle"/>
+        			</Column>
+        			<Column id="TimelineColumn">
+            			<Text text="Timeline" id="TimelineColumnTitle"/>
+        			</Column>
 				</columns>
 
 				<items>
@@ -61,10 +61,10 @@
 						<cells>
 							<ObjectIdentifier
 								text="{description}" />
-							<Text
-								text="{owner}" />                               
-							<Text
-								text="{timeline}" />
+                			<Text
+                    			text="{owner}" />
+                			<Text
+                    			text="{timeline}" />
 						</cells>
 					</ColumnListItem>
 				</items>

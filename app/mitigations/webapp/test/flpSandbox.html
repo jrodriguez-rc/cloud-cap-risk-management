@@ -5,22 +5,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mitigations</title>
 
-	<script id="sap-ui-bootstrap"
+<script id="sap-ui-bootstrap"
 			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-theme="sap_fiori_3"
 			data-sap-ui-resourceroots='{
-				"ns.mitigations": "./"
+				"ns.mitigations": "../"
 			}'
-			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+			data-sap-ui-oninit="module:ns/mitigations/test/initFlpSandbox"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-async="true"
 			data-sap-ui-preload="async"
-			data-sap-ui-frameOptions="trusted">
+			data-sap-ui-frameOptions="allow">
 	</script>
 
 </head>
-
-<body class="sapUiBody">
-	<div data-sap-ui-component data-name="ns.mitigations" data-id="container" data-settings='{"id" : "mitigations"}'></div>
+<body class="sapUiBody" id="content">
 </body>
 </html>

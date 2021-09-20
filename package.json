@@ -16,16 +16,21 @@
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.90.5",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-subset": "^1.6.0",
     "sqlite3": "^5.0.2"
   },
   "engines": {
     "node": ">=14"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "watch-mitigations": "cds watch --open mitigations/webapp/index.html#fe-lrop-v4"
   },
   "sapux": [
     "app/risks",
+    "app/mitigations",
     "app/suppliers"
   ],
   "eslintConfig": {

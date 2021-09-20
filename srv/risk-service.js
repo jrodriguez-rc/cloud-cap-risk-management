@@ -6,10 +6,33 @@ const cds = require('@sap/cds')
  */
 module.exports = cds.service.impl(async function() {
 
-    const bupaService = await cds.connect.to('API_BUSINESS_PARTNER');
-    const bupa = {
-      run: query => bupaService.send({ query, headers: process.env.SANDBOX_API_KEY ? { APIKey: process.env.SANDBOX_API_KEY } : {} })
-    }
+    const bupa = await cds.connect.to('API_BUSINESS_PARTNER');
+
+    // Risks('...')/supplier
+    this.on('READ', 'Suppliers', async (req, next) => {
+        const select = req.query.SELECT;
+
+        if (select.from.ref.length === 2 &&
+            select.from.ref[0].id === "RiskService.Risks" &&
+            (select.from.ref[1] == "supplier" || select.from.ref[1].id === "supplier")) {
+
+            // Get supplier ID from risk
+            const { supplier_ID } = await this.run(SELECT.one("supplier_ID").from("Risks").where(select.from.ref[0].where));
+
+            // Select all risks for a supplier
+            const cql = SELECT(select.columns)
+                .from('RiskService.Suppliers')
+                .where("ID = ", supplier_ID)
+                .limit(select.limit?.rows?.val, select.limit?.offset?.val);
+            cql.SELECT.count = !!select.count;
+            const supplier = await bupa.run(cql);
+
+            return supplier;
+
+        } else {
+            return next();
+        }
+    });
 
     this.on('READ', 'Suppliers', async req => {
         return bupa.run(req.query);
@@ -45,8 +68,8 @@ module.exports = cds.service.impl(async function() {
             suppliersMap[supplier.ID] = supplier;
 
         // Add suppliers to result
-        for (const note of asArray(risks)) {
-            note.supplier = suppliersMap[note.supplier_ID];
+        for (const risk of asArray(risks)) {
+            risk.supplier = suppliersMap[risk.supplier_ID];
         }
 
         return risks;

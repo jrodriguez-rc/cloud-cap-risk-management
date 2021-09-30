@@ -21,7 +21,7 @@ using { managed } from '@sap/cds/common';
   }
 
   // using an external service from
-  using {  API_BUSINESS_PARTNER as bupa } from '../srv/external/API_BUSINESS_PARTNER.csn';
+  using {  API_BUSINESS_PARTNER as bupa } from '../srv/external/API_BUSINESS_PARTNER';
 
   view Suppliers as select from bupa.A_BusinessPartner mixin {
       risks : association to many Risks on risks.supplier.ID = $projection.ID;
